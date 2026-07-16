@@ -1,8 +1,8 @@
 name: Build -> gulpegaspe-kinoite-bootc
 
 on:
-  push:
-    branches: [ "main" ]
+  #push:
+  #  branches: [ "main" ]
   workflow_dispatch:  # Permette di avviare manualmente il workflow
 
 env:
