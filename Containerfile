@@ -19,3 +19,9 @@ RUN dnf -y install brave-browser \
 #RUN grep -vE '^#' /usr/local/share/kde-bootc/packages-removed | xargs dnf -y remove
 RUN dnf -y autoremove
 RUN dnf clean all
+
+# LOGS CLEAN
+RUN find /var/log -type f ! -empty -delete
+
+# VALIDATION
+RUN bootc container lint
