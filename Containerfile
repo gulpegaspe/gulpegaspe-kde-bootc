@@ -2,7 +2,7 @@ FROM quay.io/fedora/fedora-bootc:latest
 MAINTAINER Ivan Gasperoni
 
 # INSTALL REPOS
-RUN dnf -y install dnf-plugins
+RUN dnf -y install dnf5-plugins
 RUN dnf config-manager addrepo --from-repofile=https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
 
 # INSTALL PACKAGES
