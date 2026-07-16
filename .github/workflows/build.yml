@@ -1,4 +1,4 @@
-name: Build gulpegaspe-kinoite-bootc
+name: Build -> gulpegaspe-kinoite-bootc
 
 on:
   push:
