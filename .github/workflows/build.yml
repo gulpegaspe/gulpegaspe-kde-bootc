@@ -1,1 +1,45 @@
+name: Build e pubblica su GitHub Container Registry
 
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:  # Permette di avviare manualmente il workflow
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}  # Nome immagine: ghcr.io/USER/REPO
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write  # Permesso necessario per scrivere su GitHub Packages [citation:1][citation:2]
+
+    steps:
+      - name: Checkout del repository
+        uses: actions/checkout@v7
+
+      - name: Login al Container registry
+        uses: docker/login-action@v4
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}  # Token automatico per l'autenticazione
+
+      - name: Estrai metadati (tag, labels)
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=sha,format=long
+            type=raw,value=latest
+
+      - name: Build e push dell'immagine
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
