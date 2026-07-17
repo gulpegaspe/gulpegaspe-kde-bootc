@@ -7,14 +7,15 @@ RUN dnf config-manager addrepo --from-repofile=https://brave-browser-rpm-release
 
 # INSTALL PACKAGES
 #RUN dnf -y install @kde-desktop-environment
-RUN dnf -y install plasma-workspace
+RUN dnf -y install plasma-workspace \
+    plasma-login-manager
 RUN dnf -y install brave-browser \
     distrobox \
     docker \
     kde-l10n-it \
     langpacks-it \
     virt-manager \
-    runc
+    runc # needed by docker
 #RUN grep -vE '^#' /usr/local/share/kde-bootc/packages-added | xargs dnf -y install --allowerasing
 
 # REMOVE PACKAGES
