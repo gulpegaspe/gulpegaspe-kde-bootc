@@ -12,7 +12,8 @@ RUN dnf -y install brave-browser \
     docker \
     kde-l10n-it \
     langpacks-it \
-    virt-manager
+    virt-manager \
+    runc
 #RUN grep -vE '^#' /usr/local/share/kde-bootc/packages-added | xargs dnf -y install --allowerasing
 
 # REMOVE PACKAGES
