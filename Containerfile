@@ -15,7 +15,7 @@ RUN dnf -y install plasma-workspace \
     kate \
     spectacle \
     kcalc \
-    kwallet \
+    keepsecret \
     krita \
     gwenview \
     okular \
@@ -23,7 +23,8 @@ RUN dnf -y install plasma-workspace \
     plasma-print-manager \
     plasma-firewall \
     krdp \
-    flatpak-kcm
+    flatpak-kcm \
+    firefox
 # runc id needed by docker
 RUN dnf -y install brave-browser \
     distrobox \
