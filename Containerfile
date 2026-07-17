@@ -10,6 +10,7 @@ RUN dnf config-manager addrepo --from-repofile=https://brave-browser-rpm-release
 RUN dnf -y install plasma-workspace \
     plasma-login-manager \
     plasma-nm \
+    plasma-nm-openvpn \
     dolphin \
     kate \
     spectacle \
@@ -20,7 +21,9 @@ RUN dnf -y install plasma-workspace \
     okular \
     konsole \
     plasma-print-manager \
-    krfb
+    plasma-firewall \
+    krdp \
+    flatpak-kcm
 # runc id needed by docker
 RUN dnf -y install brave-browser \
     distrobox \
