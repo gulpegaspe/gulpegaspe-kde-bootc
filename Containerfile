@@ -23,7 +23,8 @@ RUN dnf -y install plasma-workspace \
     plasma-firewall \
     krdp \
     flatpak-kcm \
-    firefox
+    firefox \
+    flatpak
     #keepsecret \
 # runc id needed by docker
 RUN dnf -y install brave-browser \
