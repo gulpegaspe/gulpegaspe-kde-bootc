@@ -1,4 +1,4 @@
-podman pull ghcr.io/gulpegaspe/gulpegaspe-kde-bootc:latest
+podman pull ghcr.io/gulpegaspe/gulpegaspe-os:latest
 
 sudo podman run --rm -it --privileged --pull=newer \
   -v ./:/output \
@@ -7,4 +7,4 @@ sudo podman run --rm -it --privileged --pull=newer \
   quay.io/centos-bootc/bootc-image-builder:latest \
   --type anaconda-iso \
   --rootfs xfs \
-  ghcr.io/gulpegaspe/gulpegaspe-kde-bootc
+  ghcr.io/gulpegaspe/gulpegaspe-os
