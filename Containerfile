@@ -35,10 +35,8 @@ RUN dnf -y install brave-browser \
     kde-l10n-it \
     langpacks-it \
     virt-manager
-#RUN grep -vE '^#' /usr/local/share/kde-bootc/packages-added | xargs dnf -y install --allowerasing
 
-# REMOVE PACKAGES
-#RUN grep -vE '^#' /usr/local/share/kde-bootc/packages-removed | xargs dnf -y remove
+# CLEAN PACKAGES
 RUN dnf -y autoremove
 RUN dnf clean all
 
