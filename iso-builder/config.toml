@@ -1,0 +1,27 @@
+# config.toml
+
+# 1. Mantiene l'installer grafico interattivo per la scelta del disco
+[customizations.installer.kickstart]
+contents = """
+# 1. Forza l'avvio della schermata grafica
+graphical
+
+# 2. Rendi interattiva la selezione dello storage (Evita il salto automatico)
+#ignoredisk interactive
+
+# 3. Rimuovi qualsiasi automazione pregressa svuotando i dischi selezionati automaticamente
+#clearpart --all
+
+%post
+# Inserisci qui l'immagine corretta del tuo container
+#bootc switch --mutate-in-place --transport registry ghcr.io/username/image:latest
+%end
+"""
+
+# 2. Crea il tuo utente personalizzato
+#[[customizations.user]]
+#name = "gulpegaspe"
+#password = "gulpegaspe"
+#groups = ["wheel"]
+# Opzionale: puoi aggiungere anche una chiave SSH per l'accesso remoto
+# key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQD..."
