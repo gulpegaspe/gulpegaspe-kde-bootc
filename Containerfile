@@ -44,8 +44,5 @@ RUN dnf clean all
 # LOGS CLEAN
 RUN find /var/log -type f ! -empty -delete
 
-# COMMENT OUT ROOT ENTRY IN /etc/fstab BECAUSE IT'S ALREADY SET UP BY BOOTC, AVOIDING AN ANNOYING CONSOLE WARNING
-RUN sed -i '/ \/ /s/^/#/' /etc/fstab
-
 # VALIDATION
 RUN bootc container lint
