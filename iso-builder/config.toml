@@ -8,6 +8,8 @@ graphical
 
 firstboot --enable
 
+network --hostname=gulpegaspe-os
+
 # Tell Anaconda that this is a container-native bootc installation
 #bootc
 #ostreecontainer--url ghcr.io/gulpegaspe/gulpegaspe-os:latest
