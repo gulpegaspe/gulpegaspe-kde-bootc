@@ -22,11 +22,8 @@ RUN dnf -y install plasma-workspace \
     plasma-print-manager \
     plasma-firewall \
     krdp \
-    flatpak-kcm \
-    firefox \
-    flatpak \
-    spice-vdagent
-    #keepsecret \
+    keepsecret
+
 # runc id needed by docker
 RUN dnf -y install brave-browser \
     distrobox \
@@ -34,7 +31,11 @@ RUN dnf -y install brave-browser \
     runc \
     kde-l10n-it \
     langpacks-it \
-    virt-manager
+    virt-manager \
+    flatpak-kcm \
+    firefox \
+    flatpak \
+    spice-vdagent
 
 # CLEAN PACKAGES
 RUN dnf -y autoremove
