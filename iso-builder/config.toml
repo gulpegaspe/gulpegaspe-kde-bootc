@@ -6,7 +6,7 @@ contents = """
 # Use the graphical installer interactive
 graphical
 
-firstboot --enable
+#firstboot --enable
 
 network --hostname=gulpegaspe-os
 
