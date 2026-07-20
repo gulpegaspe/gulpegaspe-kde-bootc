@@ -1,7 +1,8 @@
 # gulpegaspe-os
 
 ## Locale
-localectl list-locales | grep it_ \
+localectl list-locales | grep it_
+
 sudo localectl set-locale LANG=it_IT.UTF-8
 
 ## Keymap
