@@ -14,3 +14,6 @@ sudo localectl set-keymap it
 timedatectl list-timezones | grep -i rome
 
 sudo timedatectl set-timezone Europe/Rome
+
+## Comment out root entry in /etc/fstab because it's already set up by bootc, avoiding an annoying console warning
+sed -i '/ \/ /s/^/#/' /etc/fstab
