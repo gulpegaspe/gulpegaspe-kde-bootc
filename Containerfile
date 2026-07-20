@@ -35,7 +35,8 @@ RUN dnf -y install brave-browser \
     flatpak-kcm \
     firefox \
     flatpak \
-    spice-vdagent
+    spice-vdagent \
+    initial-setup
 
 # CLEAN PACKAGES
 RUN dnf -y autoremove
