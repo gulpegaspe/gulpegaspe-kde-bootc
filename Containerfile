@@ -36,7 +36,7 @@ RUN dnf -y install brave-browser \
     firefox \
     flatpak \
     spice-vdagent \
-    initial-setup
+    initial-setup-gui
 
 # CLEAN PACKAGES
 RUN dnf -y autoremove
