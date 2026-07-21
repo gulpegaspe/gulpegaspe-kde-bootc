@@ -15,7 +15,7 @@ network --hostname=gulpegaspe-os
 #ostreecontainer--url ghcr.io/gulpegaspe/gulpegaspe-os:latest
 
 %post
-sed -i '/ \/ /s/^/#/' /sysroot/etc/fstab
+sed -i '/ \\/ /s/^/#/' /sysroot/etc/fstab
 %end
 
 """
