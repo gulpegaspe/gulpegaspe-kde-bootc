@@ -34,7 +34,10 @@ RUN dnf -y install brave-browser \
     virt-manager \
     flatpak-kcm \
     firefox \
-    flatpak
+    flatpak \
+    initial-setup-gui \
+    initial-setup \
+    initial-setup-gui-wayland-plasma
 
     #spice-vdagent
     #initial-setup-gui
