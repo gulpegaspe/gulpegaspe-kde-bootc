@@ -27,6 +27,7 @@ RUN dnf -y install \
 
 # runc id needed by docker
 RUN dnf -y install \
+    langpacks-en \
     brave-browser \
     distrobox \
     docker \
