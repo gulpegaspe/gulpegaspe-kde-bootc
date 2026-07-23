@@ -47,6 +47,10 @@ RUN dnf -y install \
 # ADD FLATHUB REPO
 RUN flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
+# ADD FLATHUB PACKAGES
+RUN flatpak update
+RUN flatpak install io.github.flattool.Warehouse
+
 # CLEAN PACKAGES
 RUN dnf -y autoremove
 RUN dnf clean all
