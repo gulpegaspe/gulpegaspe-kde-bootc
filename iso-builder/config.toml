@@ -9,13 +9,16 @@ graphical
 #firstboot --enable --reconfig
 
 network --hostname=gulpegaspe-os
+timezone --utc
+#lang
+#keyboard --xlayouts
 
 # Tell Anaconda that this is a container-native bootc installation
 #bootc
 #ostreecontainer--url ghcr.io/gulpegaspe/gulpegaspe-os:latest
 
-%post
-sed -i '/ \\/ /s/^/#/' /sysroot/etc/fstab
+%post --nochroot
+#sed -i '/ \\/ /s/^/#/' /sysroot/etc/fstab
 %end
 
 """
