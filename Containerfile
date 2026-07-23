@@ -7,7 +7,8 @@ RUN dnf config-manager addrepo --from-repofile=https://brave-browser-rpm-release
 
 # INSTALL PACKAGES
 #RUN dnf -y install @kde-desktop-environment
-RUN dnf -y install plasma-workspace \
+RUN dnf -y install \
+    plasma-workspace \
     plasma-login-manager \
     plasma-nm \
     plasma-nm-openvpn \
@@ -25,22 +26,22 @@ RUN dnf -y install plasma-workspace \
     keepsecret
 
 # runc id needed by docker
-RUN dnf -y install brave-browser \
+RUN dnf -y install \
+    brave-browser \
     distrobox \
     docker \
     runc \
-    kde-l10n-it \
-    langpacks-it \
     virt-manager \
     flatpak-kcm \
     firefox \
     flatpak \
-    borgbackup \
-    initial-setup-gui \
-    initial-setup \
-    initial-setup-gui-wayland-plasma
-
+    borgbackup
     #spice-vdagent
+
+RUN dnf -y install \   
+    langpacks-it
+
+#kde-l10n-it \
 
 # ADD FLATHUB REPO
 RUN flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
