@@ -26,5 +26,5 @@ sed -i '/ \/ /s/^/#/' /etc/fstab
 
 ## Add Flathub repository
 ```bash
-{{Strikethrough|flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo}}
+<s>flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo</s>
 ```
